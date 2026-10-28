@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Собери сокровища</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="hud">
+      <span>Время: <strong id="time">0.0</strong>с</span>
+      <span>Артефакты: <strong id="items">0/3</strong></span>
+      <span>Рекорд: <strong id="highscore">—</strong></span>
+      <button id="btnMute" title="Звук вкл/выкл">🔊</button>
+    </div>
+
+    <div id="canvas-wrap">
+      <canvas id="gameCanvas" width="800" height="450"></canvas>
+
+      <!-- Оверлей: Старт -->
+      <div id="overlay-start" class="overlay">
+        <div class="overlay-box">
+          <h1>СБОР АРТЕФАКТОВ</h1>
+          <p class="rules">
+            Собери 3 артефакта и дойди до финиша.<br>
+            Избегай огня и падения в пустоту.
+          </p>
+          <div class="controls-hint">
+            <div><kbd>←</kbd> <kbd>→</kbd> / <kbd>A</kbd> <kbd>D</kbd> — движение</div>
+            <div><kbd>Space</kbd> / <kbd>W</kbd> — прыжок</div>
+          </div>
+          <button id="btnStart" class="btn-main">СТАРТ</button>
+        </div>
+      </div>
+
+
+      <div id="overlay-pause" class="overlay hidden">
+        <div class="overlay-box">
+          <h1>ПАУЗА</h1>
+          <p class="rules">Игра на паузе</p>
+          <button id="btnResume" class="btn-main">ПРОДОЛЖИТЬ</button>
+        </div>
+      </div>
+
+  
+      <div id="overlay-win" class="overlay hidden">
+        <div class="overlay-box">
+          <h1>ПОБЕДА!</h1>
+          <p class="rules">
+            Время: <strong id="win-time">0.0</strong>с<br>
+            Рекорд: <strong id="win-record">—</strong>
+          </p>
+          <button id="btnWinRestart" class="btn-main">ЗАНОВО</button>
+        </div>
+      </div>
+
+  
+      <div id="overlay-lose" class="overlay hidden">
+        <div class="overlay-box">
+          <h1>ПОРАЖЕНИЕ</h1>
+          <p class="rules">Ты упал или коснулся огня</p>
+          <button id="btnLoseRestart" class="btn-main">ЗАНОВО</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="controls">
+      <button id="btnPause" disabled>Пауза</button>
+      <button id="btnRestart" disabled>Заново</button>
+    </div>
+
+
+    <div id="mobile-controls">
+      <button id="btnLeft" class="mobile-btn">◀</button>
+      <button id="btnJump" class="mobile-btn">▲</button>
+      <button id="btnRight" class="mobile-btn">▶</button>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
